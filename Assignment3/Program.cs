@@ -8,7 +8,6 @@ namespace Assignment3
         static void Main(string[] args)
         {
             //1 - nej de är inkapslade
-            //Person anderz = new Person();
             PersonHandler ph = new PersonHandler();
             Person anderz = ph.CreatePerson(37, "Anderz", "Lindberg", 180, 65);
             ph.PrintPerson(anderz);
@@ -31,8 +30,7 @@ namespace Assignment3
 
             foreach (Animal animal_iterator in Animals)
             {
-                if(animal_iterator is Dog)
-                Console.WriteLine(animal_iterator.Stats());
+                if(animal_iterator is Dog) Console.WriteLine(animal_iterator.Stats());
                 //animal_iterator.SayObama(); 3.3.15: därför att typen är Animal.. En Animal är INTE en Dog men en Dog är en Animal.
             }
 
@@ -58,6 +56,27 @@ namespace Assignment3
             {
                 Console.WriteLine(u.UEMessage());
             }
+
+
+            /* 
+             *3.4.11, svar: För att kunna skapa ett gemensamt gränssnitt för flera klasser som ärver av samma basklass. Det innebär
+             *              att man kan skriva olika implementationer för olika subklasser av samma metoder - som därmed kan användas
+             *              på samma sätt, oavsett implementation.
+             * 
+             *3.4.12, svar: Se föreg. svar .. samt undvika att skriva dubbelt eftersom enbart enskilda implementationsdetaljer behöver
+             *              ..ja, implementeras.. och i den anropande koden behöver man inte fundera så mycket på hur den ska användas
+             *              just eftersom gränssnittet implicerar vissa beteenden. Exempel en panel på en bandspelare har alltid en play-
+             *              knapp och man behöver inte veta så mycket mer om det underliggande annat än att det är på play man ska trycka.
+             *              Instanser av subklasserna kan också hanteras som vore de instanser av basklassen - med flera fördelar; exempelvis
+             *              blir det möjligt att skapa samlingar av olika typer genom att sätta datatypen till superklassen.
+             *              
+             *3.4.13, svar: C# tillåter arv från EN basklass enbart, vilket går att komma runt med interface. Interface tillåter inga definitioner
+                            eller privata medlemmar. 
+
+             * 
+             * 
+             * 
+             */
 
         }
     }
